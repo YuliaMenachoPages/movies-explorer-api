@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
-const router = require('./routes/index');
 const { errors } = require('celebrate');
 const cors = require('cors');
-const { limiter } = require('./utils/limiter')
+const router = require('./routes/index');
+const { limiter } = require('./utils/limiter');
 const { handleError } = require('./middlewares/handleError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const {PORT_GATE, DB_PATH} = require("./utils/consts");
+const { PORT_GATE, DB_PATH } = require('./utils/consts');
 
 const { PORT = PORT_GATE, DB_URL = DB_PATH } = process.env;
 
